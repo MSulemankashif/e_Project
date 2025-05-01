@@ -1,0 +1,42 @@
+Tables:
+	Services : 
+		 => ServiceId
+		 => ServiceName
+		 => DailyChargePerEmployee
+
+	Departments :
+		 => DepartmentId
+		 => DepartmentName
+
+	Employees :
+		 => EmployeeId
+		 => Name
+		 => Designation
+		 => ServiceId
+
+	Clients :
+		 => ClientsId
+		 => ClientsName
+ 		 => Email
+		 => ContactNo
+		 => Address
+
+	ClientServices :
+		 => ClientServiceId
+		 => ClientId
+		 => ServiceId
+		 => StartDate
+		 => NoOfEmployees
+
+	ClientProducts :
+		 => ProductId
+		 => ClientId
+		 => ProductName
+		 => ProductDescription
+		
+	Payments :
+		 => PaymentId
+		 => ClientId
+		 => AmountPaid
+		 => PaymentDate
+		 => PaymentStatus

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Excellon")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c36435474e0b845e8c23b95e21a9d94609ed0a73")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a200d6e191a53d809b553192e8596f392d087d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Excellon")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Excellon")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
