@@ -1,0 +1,160 @@
+﻿@{
+    ViewData["Title"] = "Signup";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Excell-on</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#0066CC',secondary:'#28A745'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+        }
+
+        .error-shake {
+            animation: shake 0.5s;
+        }
+        @@keyframes shake {
+            0%, 100%
+
+        {
+            transform: translateX(0);
+        }
+
+        10%, 30%, 50%, 70%, 90% {
+            transform: translateX(-5px);
+        }
+
+        20%, 40%, 60%, 80% {
+            transform: translateX(5px);
+        }
+
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-md">
+        <div class="bg-white rounded-lg shadow-lg p-8">
+            <div class="text-center mb-8">
+                <h1 class="font-['Pacifico'] text-3xl text-primary">Excell-on</h1>
+                <p class="text-gray-600 mt-2">Business Management Solution</p>
+            </div>
+
+            <div id="register-form" class="space-y-6">
+                <h2 class="text-2xl font-semibold text-gray-800">Create an account</h2>
+                <p class="text-gray-600">Fill in your details to get started</p>
+
+                <div id="register-error-message" class="hidden bg-red-100 text-red-700 p-3 rounded mb-4 error-shake">
+                    <div class="flex items-center">
+                        <div class="w-6 h-6 flex items-center justify-center mr-2">
+                            <i class="ri-error-warning-line"></i>
+                        </div>
+                        <span id="register-error-text">Something went wrong. Please try again.</span>
+                    </div>
+                </div>
+
+                <form id="registerForm" class="space-y-4">
+                    <div>
+                        <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none w-10 h-10">
+                                <i class="ri-user-line text-gray-400"></i>
+                            </div>
+                            <input type="text" id="fullName" name="fullName" class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary transition-all text-sm" placeholder="John Smith" required>
+                        </div>
+                        <p class="hidden text-red-600 text-xs mt-1" id="fullName-error"></p>
+                    </div>
+
+                    <div>
+                        <label for="registerEmail" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none w-10 h-10">
+                                <i class="ri-mail-line text-gray-400"></i>
+                            </div>
+                            <input type="email" id="registerEmail" name="email" class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary transition-all text-sm" placeholder="your@email.com" required>
+                        </div>
+                        <p class="hidden text-red-600 text-xs mt-1" id="registerEmail-error"></p>
+                    </div>
+
+                    <div>
+                        <label for="registerPassword" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none w-10 h-10">
+                                <i class="ri-lock-line text-gray-400"></i>
+                            </div>
+                            <input type="password" id="registerPassword" name="password" class="w-full pl-10 pr-10 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary transition-all text-sm" placeholder="••••••••" required>
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center w-10 h-10">
+                                <i class="ri-eye-off-line text-gray-400 toggle-password" data-target="registerPassword"></i>
+                            </div>
+                        </div>
+                        <p class="hidden text-red-600 text-xs mt-1" id="registerPassword-error"></p>
+                    </div>
+
+                    <div>
+                        <label for="confirmPassword" class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none w-10 h-10">
+                                <i class="ri-lock-line text-gray-400"></i>
+                            </div>
+                            <input type="password" id="confirmPassword" name="confirmPassword" class="w-full pl-10 pr-10 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary transition-all text-sm" placeholder="••••••••" required>
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center w-10 h-10">
+                                <i class="ri-eye-off-line text-gray-400 toggle-password" data-target="confirmPassword"></i>
+                            </div>
+                        </div>
+                        <p class="hidden text-red-600 text-xs mt-1" id="confirmPassword-error"></p>
+                    </div>
+
+                    <div>
+                        <label class="custom-checkbox flex items-start">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <span class="checkmark mr-2 mt-0.5"></span>
+                            <span class="text-sm text-gray-600">I agree to the <a href="#" class="text-primary hover:text-primary/80">Terms of Service</a> and <a href="#" class="text-primary hover:text-primary/80">Privacy Policy</a></span>
+                        </label>
+                        <p class="hidden text-red-600 text-xs mt-1" id="terms-error"></p>
+                    </div>
+
+                    <button type="submit" class="w-full bg-primary text-white py-2 px-4 rounded-button hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all font-medium flex items-center justify-center whitespace-nowrap">
+                        <span>Create Account</span>
+                        <div id="register-spinner" class="hidden ml-2 w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    </button>
+                </form>
+
+                <div class="text-center mt-6">
+                    <p class="text-gray-600 text-sm">
+                        Already have an account?
+                        <a href="#" id="show-login" class="text-primary hover:text-primary/80 font-medium">Sign in</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-6 text-gray-500 text-sm">
+            <p>© 2025 Excell-on. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const registerFormEl = document.getElementById('registerForm');
+            registerFormEl.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Add your registration validation and submission logic here
+            });
+        });
+    </script>
+</body>
+</html>
