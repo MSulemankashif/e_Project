@@ -2,7 +2,942 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excell-On Services - Home</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#1E88E5',secondary:'#64B5F6'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-section {
+            background-image: url('https://readdy.ai/api/search-image?query=professional%2520business%2520team%2520meeting%2520with%2520modern%2520office%2520setting%252C%2520blue%2520accent%2520colors%252C%2520left%2520side%2520has%2520gradient%2520transition%2520to%2520white%2520for%2520text%2520overlay%252C%2520right%2520side%2520shows%2520diverse%2520business%2520professionals%2520collaborating%252C%2520high-end%2520corporate%2520environment%252C%2520clean%2520design%252C%2520subtle%2520technology%2520elements%252C%2520perfect%2520for%2520business%2520consulting%2520hero%2520section&width=1920&height=700&seq=12345&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #1E88E5;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(30, 136, 229, 0.1), 0 10px 10px -5px rgba(30, 136, 229, 0.04);
+        }
+        .testimonial-slider {
+            scroll-behavior: smooth;
+        }
+        .custom-checkbox {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d1d5db;
+            border-radius: 4px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .custom-checkbox:checked {
+            background-color: #1E88E5;
+            border-color: #1E88E5;
+        }
+        .custom-checkbox:checked::after {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .custom-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .custom-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #e5e7eb;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #1E88E5;
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        .benefit-card {
+            transition: all 0.3s ease;
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(30, 136, 229, 0.1), 0 10px 10px -5px rgba(30, 136, 229, 0.04);
+        }
+        .stat-card {
+            transition: all 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+
+    <!-- Hero Section -->
+    <section class="hero-section w-full">
+        <div class="container mx-auto px-6 py-28 md:py-36 w-full">
+            <div class="w-full max-w-2xl">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">Transforming Businesses with Expert Solutions</h1>
+                <p class="text-lg md:text-xl text-gray-700 mb-8">We help businesses optimize operations, increase revenue, and achieve sustainable growth through tailored consulting services.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#services" class="px-6 py-3 bg-primary text-white font-medium !rounded-button hover:bg-primary/90 transition duration-300 text-center whitespace-nowrap">Explore Our Services</a>
+                    <a href="#contact" class="px-6 py-3 border border-gray-300 text-gray-800 font-medium !rounded-button hover:border-primary hover:text-primary transition duration-300 text-center whitespace-nowrap">Schedule a Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By Section -->
+    <section class="py-10 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-8">
+                <p class="text-gray-600 font-medium">Trusted by leading companies worldwide</p>
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                <div class="w-24 h-12 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
+                    <i class="ri-microsoft-fill ri-3x text-gray-500"></i>
+                </div>
+                <div class="w-24 h-12 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
+                    <i class="ri-amazon-fill ri-3x text-gray-500"></i>
+                </div>
+                <div class="w-24 h-12 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
+                    <i class="ri-google-fill ri-3x text-gray-500"></i>
+                </div>
+                <div class="w-24 h-12 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
+                    <i class="ri-apple-fill ri-3x text-gray-500"></i>
+                </div>
+                <div class="w-24 h-12 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
+                    <i class="ri-netflix-fill ri-3x text-gray-500"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Comprehensive Services</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">We offer a wide range of consulting services to help businesses optimize their operations, increase revenue, and achieve sustainable growth.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-lg shadow-sm p-8 border border-gray-100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+                        <i class="ri-customer-service-2-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">In-bound Services</h3>
+                    <p class="text-gray-600 mb-6">Enhance your customer experience with our professional in-bound call center services, including customer support, technical assistance, and order processing.</p>
+                    <a href="#" class="text-primary flex items-center font-medium hover:underline">
+                        Learn More
+                        <div class="w-5 h-5 flex items-center justify-center ml-1">
+                            <i class="ri-arrow-right-line"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-lg shadow-sm p-8 border border-gray-100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+                        <i class="ri-phone-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Out-bound Services</h3>
+                    <p class="text-gray-600 mb-6">Drive sales and growth with our strategic out-bound services, including lead generation, appointment setting, market research, and customer retention campaigns.</p>
+                    <a href="#" class="text-primary flex items-center font-medium hover:underline">
+                        Learn More
+                        <div class="w-5 h-5 flex items-center justify-center ml-1">
+                            <i class="ri-arrow-right-line"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-lg shadow-sm p-8 border border-gray-100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+                        <i class="ri-megaphone-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Tele Marketing</h3>
+                    <p class="text-gray-600 mb-6">Expand your market reach with our results-driven telemarketing services, designed to generate qualified leads, increase brand awareness, and boost sales conversions.</p>
+                    <a href="#" class="text-primary flex items-center font-medium hover:underline">
+                        Learn More
+                        <div class="w-5 h-5 flex items-center justify-center ml-1">
+                            <i class="ri-arrow-right-line"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-lg shadow-sm p-8 border border-gray-100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+                        <i class="ri-line-chart-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Business Strategy</h3>
+                    <p class="text-gray-600 mb-6">Develop a clear roadmap for success with our comprehensive business strategy services, including market analysis, competitive positioning, and growth planning.</p>
+                    <a href="#" class="text-primary flex items-center font-medium hover:underline">
+                        Learn More
+                        <div class="w-5 h-5 flex items-center justify-center ml-1">
+                            <i class="ri-arrow-right-line"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="#" class="px-6 py-3 border border-primary text-primary font-medium !rounded-button hover:bg-primary hover:text-white transition duration-300 inline-block whitespace-nowrap">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Benefits Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Choose Excell-On</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Discover the key benefits that set us apart and make us the preferred choice for businesses seeking exceptional results.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="benefit-card bg-white p-8 rounded-lg shadow-sm">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+                        <i class="ri-team-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Expert Team</h3>
+                    <p class="text-gray-600">Our team of seasoned professionals brings decades of industry experience to deliver tailored solutions that drive measurable results for your business.</p>
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                        <div class="flex items-center">
+                            <div class="text-primary font-medium mr-2">Experience:</div>
+                            <div class="text-gray-900 font-semibold">15+ Years</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="benefit-card bg-white p-8 rounded-lg shadow-sm">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+                        <i class="ri-customer-service-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Client-Focused Approach</h3>
+                    <p class="text-gray-600">We prioritize understanding your unique business challenges and goals to create customized strategies that align perfectly with your vision.</p>
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                        <div class="flex items-center">
+                            <div class="text-primary font-medium mr-2">Satisfaction Rate:</div>
+                            <div class="text-gray-900 font-semibold">98%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="benefit-card bg-white p-8 rounded-lg shadow-sm">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+                        <i class="ri-bar-chart-grouped-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Proven Results</h3>
+                    <p class="text-gray-600">Our track record speaks for itself with consistent delivery of exceptional ROI, increased efficiency, and sustainable business growth for our clients.</p>
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                        <div class="flex items-center">
+                            <div class="text-primary font-medium mr-2">Average ROI:</div>
+                            <div class="text-gray-900 font-semibold">32%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Statistics -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Impact by the Numbers</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Measurable results that demonstrate our commitment to delivering exceptional value to our clients.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="stat-card bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-4">
+                        <i class="ri-building-line ri-2x text-primary"></i>
+                    </div>
+                    <div class="text-4xl font-bold text-gray-900 mb-2 counter" data-target="500">500</div>
+                    <p class="text-gray-600 font-medium">Clients Served</p>
+                </div>
+
+                <div class="stat-card bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-4">
+                        <i class="ri-global-line ri-2x text-primary"></i>
+                    </div>
+                    <div class="text-4xl font-bold text-gray-900 mb-2 counter" data-target="20">20</div>
+                    <p class="text-gray-600 font-medium">Industries Covered</p>
+                </div>
+
+                <div class="stat-card bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-4">
+                        <i class="ri-pie-chart-line ri-2x text-primary"></i>
+                    </div>
+                    <div class="text-4xl font-bold text-gray-900 mb-2 counter" data-target="98">98<span>%</span></div>
+                    <p class="text-gray-600 font-medium">Success Rate</p>
+                </div>
+
+                <div class="stat-card bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-4">
+                        <i class="ri-line-chart-line ri-2x text-primary"></i>
+                    </div>
+                    <div class="text-4xl font-bold text-gray-900 mb-2 counter" data-target="32">32<span>%</span></div>
+                    <p class="text-gray-600 font-medium">Average ROI</p>
+                </div>
+            </div>
+
+            <div class="mt-16">
+                <div id="performanceChart" class="w-full h-80 bg-white p-6 rounded-lg shadow-sm"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Case Study -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Success Story: Nexus Technologies</h2>
+                    <p class="text-gray-600 mb-6">Nexus Technologies faced challenges with their legacy systems, resulting in high operational costs and frequent downtime. They needed a comprehensive solution to modernize their infrastructure while minimizing disruption to their business.</p>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Our Approach</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-0.5">
+                                    <i class="ri-check-line text-primary"></i>
+                                </div>
+                                <span class="text-gray-600">Conducted thorough assessment of existing infrastructure</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-0.5">
+                                    <i class="ri-check-line text-primary"></i>
+                                </div>
+                                <span class="text-gray-600">Developed phased migration plan to cloud infrastructure</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-0.5">
+                                    <i class="ri-check-line text-primary"></i>
+                                </div>
+                                <span class="text-gray-600">Implemented DevOps practices for continuous integration</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-0.5">
+                                    <i class="ri-check-line text-primary"></i>
+                                </div>
+                                <span class="text-gray-600">Provided comprehensive training for technical teams</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Results</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-4 bg-primary/5 rounded">
+                                <div class="text-2xl font-bold text-gray-900">40%</div>
+                                <p class="text-gray-600">Cost Reduction</p>
+                            </div>
+                            <div class="p-4 bg-primary/5 rounded">
+                                <div class="text-2xl font-bold text-gray-900">99.9%</div>
+                                <p class="text-gray-600">System Uptime</p>
+                            </div>
+                            <div class="p-4 bg-primary/5 rounded">
+                                <div class="text-2xl font-bold text-gray-900">3x</div>
+                                <p class="text-gray-600">Deployment Speed</p>
+                            </div>
+                            <div class="p-4 bg-primary/5 rounded">
+                                <div class="text-2xl font-bold text-gray-900">25%</div>
+                                <p class="text-gray-600">Team Productivity</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <a href="https://readdy.ai/home/33f9a584-9b7a-4cb2-a40f-b391ae38de69/edb7b4b6-d311-43cb-8790-5280aaf165e6" data-readdy="true" class="px-6 py-3 bg-primary text-white font-medium !rounded-button hover:bg-primary/90 transition duration-300 inline-block whitespace-nowrap">View More Success Stories</a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="https://readdy.ai/api/search-image?query=modern%2520tech%2520office%2520with%2520developers%2520working%2520on%2520computers%252C%2520blue%2520accent%2520lighting%252C%2520clean%2520workspace%252C%2520professional%2520environment%252C%2520software%2520development%2520team%2520collaboration%252C%2520high%2520quality%2520professional%2520photo%252C%2520no%2520people%2520faces%2520visible&width=600&height=500&seq=12350&orientation=portrait" alt="Nexus Technologies Case Study" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Hear directly from our clients about their experience working with us.</p>
+            </div>
+
+            <div class="relative">
+                <div class="testimonial-slider flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 hide-scrollbar">
+                    <!-- Testimonial 1 -->
+                    <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] snap-start">
+                        <div class="bg-white p-8 rounded-lg shadow-sm h-full">
+                            <div class="flex items-center mb-6">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary">
+                                    <i class="ri-double-quotes-l ri-lg"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-6 italic">"Excell-On Services transformed our customer service operations. Their in-bound solutions increased our customer satisfaction scores by 35% within just three months of implementation. The team's expertise and dedication to our success made all the difference."</p>
+                            <div class="flex items-center">
+                                <img src="https://readdy.ai/api/search-image?query=professional%2520business%2520woman%2520portrait%252C%252040s%252C%2520confident%2520smile%252C%2520business%2520attire%252C%2520neutral%2520background%252C%2520headshot%252C%2520high%2520quality%2520professional%2520photo&width=100&height=100&seq=12347&orientation=squarish" alt="Client" class="w-12 h-12 rounded-full object-cover mr-4">
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Jennifer Lawson</h4>
+                                    <p class="text-sm text-gray-500">COO, Nexus Technologies</p>
+                                </div>
+                            </div>
+                            <div class="mt-6 pt-6 border-t border-gray-100">
+                                <div class="flex items-center">
+                                    <div class="text-primary font-medium mr-2">Project Impact:</div>
+                                    <div class="text-gray-900 font-semibold">+35% Customer Satisfaction</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] snap-start">
+                        <div class="bg-white p-8 rounded-lg shadow-sm h-full">
+                            <div class="flex items-center mb-6">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary">
+                                    <i class="ri-double-quotes-l ri-lg"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-6 italic">"The telemarketing campaign designed by Excell-On generated 250+ qualified leads in our first quarter. Their strategic approach to our market segment and attention to detail in campaign execution made all the difference for our sales growth and market expansion."</p>
+                            <div class="flex items-center">
+                                <img src="https://readdy.ai/api/search-image?query=professional%2520business%2520man%2520portrait%252C%252050s%252C%2520confident%2520smile%252C%2520business%2520suit%252C%2520neutral%2520background%252C%2520headshot%252C%2520high%2520quality%2520professional%2520photo&width=100&height=100&seq=12348&orientation=squarish" alt="Client" class="w-12 h-12 rounded-full object-cover mr-4">
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Michael Richardson</h4>
+                                    <p class="text-sm text-gray-500">CEO, Global Dynamics</p>
+                                </div>
+                            </div>
+                            <div class="mt-6 pt-6 border-t border-gray-100">
+                                <div class="flex items-center">
+                                    <div class="text-primary font-medium mr-2">Project Impact:</div>
+                                    <div class="text-gray-900 font-semibold">250+ Qualified Leads</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] snap-start">
+                        <div class="bg-white p-8 rounded-lg shadow-sm h-full">
+                            <div class="flex items-center mb-6">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary">
+                                    <i class="ri-double-quotes-l ri-lg"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-6 italic">"Working with Excell-On has been a game-changer for our business. Their out-bound services helped us expand into new markets and increase our revenue by 42% year-over-year. The team's strategic insights and execution capabilities exceeded our expectations."</p>
+                            <div class="flex items-center">
+                                <img src="https://readdy.ai/api/search-image?query=professional%2520business%2520woman%2520portrait%252C%252030s%252C%2520confident%2520smile%252C%2520business%2520casual%2520attire%252C%2520neutral%2520background%252C%2520headshot%252C%2520high%2520quality%2520professional%2520photo&width=100&height=100&seq=12349&orientation=squarish" alt="Client" class="w-12 h-12 rounded-full object-cover mr-4">
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Sarah Thompson</h4>
+                                    <p class="text-sm text-gray-500">Marketing Director, Innovate Inc.</p>
+                                </div>
+                            </div>
+                            <div class="mt-6 pt-6 border-t border-gray-100">
+                                <div class="flex items-center">
+                                    <div class="text-primary font-medium mr-2">Project Impact:</div>
+                                    <div class="text-gray-900 font-semibold">+42% Revenue Growth</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center mt-6 space-x-2">
+                    <button id="prevBtn" class="w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-sm hover:bg-primary hover:text-white transition duration-300">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </button>
+                    <button id="nextBtn" class="w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-sm hover:bg-primary hover:text-white transition duration-300">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">How We Work</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Our proven methodology ensures consistent results and a seamless experience for our clients.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="relative">
+                    <div class="bg-white p-6 rounded-lg shadow-sm mb-8 h-full">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full mb-4 font-bold text-lg">1</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Discovery</h3>
+                        <p class="text-gray-600">We begin by understanding your business goals, challenges, and current processes through in-depth consultations.</p>
+                    </div>
+                    <div class="hidden md:block absolute top-1/4 right-0 w-full h-1 bg-gray-200 -z-10 transform translate-x-1/2">
+                        <div class="w-3 h-3 bg-primary rounded-full absolute top-1/2 right-0 transform -translate-y-1/2"></div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative">
+                    <div class="bg-white p-6 rounded-lg shadow-sm mb-8 h-full">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full mb-4 font-bold text-lg">2</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Strategy</h3>
+                        <p class="text-gray-600">Our experts develop a tailored strategy and implementation plan designed to address your specific needs and objectives.</p>
+                    </div>
+                    <div class="hidden md:block absolute top-1/4 right-0 w-full h-1 bg-gray-200 -z-10 transform translate-x-1/2">
+                        <div class="w-3 h-3 bg-primary rounded-full absolute top-1/2 right-0 transform -translate-y-1/2"></div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative">
+                    <div class="bg-white p-6 rounded-lg shadow-sm mb-8 h-full">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full mb-4 font-bold text-lg">3</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Implementation</h3>
+                        <p class="text-gray-600">We execute the strategy with precision, ensuring minimal disruption to your operations and maximum efficiency.</p>
+                    </div>
+                    <div class="hidden md:block absolute top-1/4 right-0 w-full h-1 bg-gray-200 -z-10 transform translate-x-1/2">
+                        <div class="w-3 h-3 bg-primary rounded-full absolute top-1/2 right-0 transform -translate-y-1/2"></div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative">
+                    <div class="bg-white p-6 rounded-lg shadow-sm mb-8 h-full">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full mb-4 font-bold text-lg">4</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Optimization</h3>
+                        <p class="text-gray-600">We continuously monitor performance, gather feedback, and make data-driven adjustments to optimize results over time.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="#" class="px-6 py-3 border border-primary text-primary font-medium !rounded-button hover:bg-primary hover:text-white transition duration-300 inline-block whitespace-nowrap">Learn About Our Process</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section id="contact" class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Ready to Transform Your Business?</h2>
+                    <p class="text-gray-600 mb-6">Schedule a consultation with our experts to discuss how we can help you achieve your business goals.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="John Smith">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="john@example.com">
+                            </div>
+                            <div class="mb-4">
+                                <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Company</label>
+                                <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="Your Company">
+                            </div>
+                            <div class="mb-4">
+                                <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Service of Interest</label>
+                                <div class="relative">
+                                    <select id="service" name="service" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary appearance-none pr-8">
+                                        <option value="">Select a service</option>
+                                        <option value="inbound">In-bound Services</option>
+                                        <option value="outbound">Out-bound Services</option>
+                                        <option value="telemarketing">Tele Marketing</option>
+                                        <option value="strategy">Business Strategy</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none w-5 h-5 flex items-center justify-center">
+                                        <i class="ri-arrow-down-s-line text-gray-500"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+<textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="Tell us about your business needs..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full px-6 py-3 bg-primary text-white font-medium !rounded-button hover:bg-primary/90 transition duration-300 whitespace-nowrap">Schedule a Consultation</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="https://readdy.ai/api/search-image?query=business%2520meeting%2520with%2520consultants%2520presenting%2520to%2520clients%252C%2520professional%2520setting%252C%2520blue%2520accent%2520colors%252C%2520modern%2520conference%2520room%252C%2520charts%2520and%2520graphs%2520on%2520screen%252C%2520collaborative%2520environment%252C%2520high%2520quality%2520professional%2520photo&width=600&height=400&seq=12353&orientation=landscape" alt="Consultation" class="w-full h-auto rounded-lg shadow-lg">
+                    <div class="mt-8 bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Direct Contact</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-3">
+                                    <i class="ri-phone-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-900 font-medium">Call Us</p>
+                                    <p class="text-gray-600">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-3">
+                                    <i class="ri-mail-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-900 font-medium">Email Us</p>
+                                    <p class="text-gray-600">info@excellon-services.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-3">
+                                    <i class="ri-map-pin-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-900 font-medium">Visit Us</p>
+                                    <p class="text-gray-600">123 Business Avenue, Suite 500, New York, NY 10001</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-primary/5">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Stay Updated with Our Newsletter</h2>
+                <p class="text-gray-600 mb-8">Subscribe to receive the latest insights, industry trends, and exclusive offers.</p>
+                <div class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none">
+                    <button class="px-6 py-3 bg-primary text-white font-medium !rounded-button hover:bg-primary/90 transition duration-300 whitespace-nowrap">Subscribe</button>
+                </div>
+                <div class="mt-6 flex items-center justify-center">
+                    <label class="custom-switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                    <span class="ml-3 text-gray-600 text-sm">I agree to receive marketing communications from Excell-On</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <a href="#" class="text-2xl font-['Pacifico'] text-white mb-4 inline-block">Excell-On</a>
+                    <p class="text-gray-400 mb-6">Providing expert business consulting services since 2010. We help businesses transform, grow, and succeed.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+                            <i class="ri-facebook-fill text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+                            <i class="ri-twitter-fill text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+                            <i class="ri-linkedin-fill text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+                            <i class="ri-instagram-fill text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="https://readdy.ai/home/33f9a584-9b7a-4cb2-a40f-b391ae38de69/edb7b4b6-d311-43cb-8790-5280aaf165e6" data-readdy="true" class="text-gray-400 hover:text-white transition duration-300">Clients</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">In-bound Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Out-bound Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Tele Marketing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Business Strategy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Market Research</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates and insights.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email address" class="px-4 py-2 w-full bg-gray-800 border-none rounded-l text-white focus:outline-none focus:ring-1 focus:ring-primary">
+                        <button type="submit" class="px-4 py-2 bg-primary text-white !rounded-r-button hover:bg-primary/90 transition duration-300 whitespace-nowrap">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Excell-On Services. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const menuButton = document.querySelector('.ri-menu-line');
+            if (menuButton) {
+                menuButton.addEventListener('click', function() {
+                    // Mobile menu functionality would go here
+                    alert('Mobile menu clicked');
+                });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Counter animation
+            const counters = document.querySelectorAll('.counter');
+
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000; // ms
+                const step = target / (duration / 16); // 16ms is roughly 60fps
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                        if (counter.querySelector('span')) {
+                            counter.innerHTML = target + counter.querySelector('span').outerHTML;
+                        }
+                    }
+                };
+
+                updateCounter();
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Testimonial slider
+            const slider = document.querySelector('.testimonial-slider');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            if (slider && prevBtn && nextBtn) {
+                const slideWidth = slider.querySelector('div').offsetWidth;
+
+                prevBtn.addEventListener('click', () => {
+                    slider.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+                });
+
+                nextBtn.addEventListener('click', () => {
+                    slider.scrollBy({ left: slideWidth, behavior: 'smooth' });
+                });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize the chart
+            const chartDom = document.getElementById('performanceChart');
+            if (chartDom) {
+                const myChart = echarts.init(chartDom);
+
+                const option = {
+                    animation: false,
+                    title: {
+                        text: 'Performance Metrics by Industry',
+                        left: 'center',
+                        textStyle: {
+                            color: '#1f2937'
+                        }
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                        borderColor: '#e5e7eb',
+                        textStyle: {
+                            color: '#1f2937'
+                        }
+                    },
+                    legend: {
+                        data: ['ROI', 'Efficiency Gain', 'Customer Satisfaction'],
+                        bottom: 0,
+                        textStyle: {
+                            color: '#1f2937'
+                        }
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '15%',
+                        top: '15%',
+                        containLabel: true
+                    },
+                    xAxis: {
+                        type: 'category',
+                        data: ['Technology', 'Healthcare', 'Finance', 'Manufacturing', 'Retail'],
+                        axisLine: {
+                            lineStyle: {
+                                color: '#d1d5db'
+                            }
+                        },
+                        axisLabel: {
+                            color: '#1f2937'
+                        }
+                    },
+                    yAxis: {
+                        type: 'value',
+                        name: 'Percentage (%)',
+                        nameTextStyle: {
+                            color: '#1f2937'
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: '#d1d5db'
+                            }
+                        },
+                        axisLabel: {
+                            color: '#1f2937'
+                        },
+                        splitLine: {
+                            lineStyle: {
+                                color: '#e5e7eb'
+                            }
+                        }
+                    },
+                    series: [
+                        {
+                            name: 'ROI',
+                            type: 'bar',
+                            data: [38, 28, 42, 32, 35],
+                            itemStyle: {
+                                color: 'rgba(87, 181, 231, 1)',
+                                borderRadius: [4, 4, 0, 0]
+                            }
+                        },
+                        {
+                            name: 'Efficiency Gain',
+                            type: 'bar',
+                            data: [45, 35, 30, 48, 25],
+                            itemStyle: {
+                                color: 'rgba(141, 211, 199, 1)',
+                                borderRadius: [4, 4, 0, 0]
+                            }
+                        },
+                        {
+                            name: 'Customer Satisfaction',
+                            type: 'line',
+                            data: [42, 48, 38, 35, 40],
+                            smooth: true,
+                            symbol: 'none',
+                            lineStyle: {
+                                color: 'rgba(251, 191, 114, 1)'
+                            },
+                            areaStyle: {
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                    {
+                                        offset: 0,
+                                        color: 'rgba(251, 191, 114, 0.3)'
+                                    },
+                                    {
+                                        offset: 1,
+                                        color: 'rgba(251, 191, 114, 0.1)'
+                                    }
+                                ])
+                            }
+                        }
+                    ]
+                };
+
+                myChart.setOption(option);
+
+                window.addEventListener('resize', function() {
+                    myChart.resize();
+                });
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

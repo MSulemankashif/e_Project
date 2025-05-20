@@ -1,0 +1,1273 @@
+﻿@{
+    ViewData["Title"] = "About Us";
+}
+<h1>@ViewData["Title"]</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excell-On Services - About Us</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#1E88E5',secondary:'#64B5F6'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-section {
+            background-image: url('https://readdy.ai/api/search-image?query=modern%2520corporate%2520office%2520building%2520with%2520blue%2520glass%2520facade%252C%2520professional%2520business%2520environment%252C%2520clean%2520architectural%2520design%252C%2520soft%2520lighting%252C%2520subtle%2520blue%2520accent%2520colors%252C%2520corporate%2520headquarters%2520appearance%252C%2520inspiring%2520workplace%252C%2520high-end%2520photography%2520with%2520perfect%2520composition%2520and%2520lighting&width=1920&height=500&seq=12380&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #1E88E5;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: #e5e7eb;
+        }
+
+        .timeline-item:nth-child(odd) {
+            padding-right: 50px;
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: 50px;
+        }
+
+            .timeline-item:nth-child(odd)::before,
+            .timeline-item:nth-child(even)::before {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background-color: #1E88E5;
+                border-radius: 50%;
+                top: 24px;
+            }
+
+        .timeline-item:nth-child(odd)::before {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: -10px;
+        }
+
+        .team-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .team-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(30, 136, 229, 0.1), 0 10px 10px -5px rgba(30, 136, 229, 0.04);
+            }
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+            .social-icon:hover {
+                background-color: #1E88E5;
+                color: white;
+            }
+
+        .value-card {
+            transition: transform 0.3s ease;
+        }
+
+            .value-card:hover {
+                transform: translateY(-5px);
+            }
+
+        .testimonial-slider {
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
+
+            .testimonial-slider::-webkit-scrollbar {
+                display: none;
+            }
+
+        .location-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .location-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(30, 136, 229, 0.1), 0 10px 10px -5px rgba(30, 136, 229, 0.04);
+            }
+
+        .csr-card {
+            transition: transform 0.3s ease;
+        }
+
+            .csr-card:hover {
+                transform: translateY(-5px);
+            }
+        @@media (max-width: 768px) {
+            .timeline-container::before
+
+        {
+            left: 30px;
+        }
+
+        .timeline-item:nth-child(odd),
+        .timeline-item:nth-child(even) {
+            padding-left: 80px;
+            padding-right: 0;
+        }
+
+            .timeline-item:nth-child(odd)::before,
+            .timeline-item:nth-child(even)::before {
+                left: 20px;
+            }
+
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+
+    <!-- Hero Section -->
+    <section class="hero-section w-full">
+        <div class="container mx-auto px-6 py-20 md:py-28 w-full">
+            <div class="w-full max-w-2xl">
+                <div class="flex items-center text-sm text-gray-600 mb-4">
+                    <a href="https://readdy.ai/home/33f9a584-9b7a-4cb2-a40f-b391ae38de69/bffe27d6-0b1a-43db-9c6d-f8646c1af3f2" data-readdy="true" class="hover:text-primary">Home</a>
+                    <span class="mx-2">/</span>
+                    <span class="text-primary font-medium">About Us</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">Our Story, Our Mission, Our People</h1>
+                <p class="text-lg md:text-xl text-gray-700 mb-8">Learn about Excell-On Services, our journey, values, and the dedicated team behind our success in transforming businesses worldwide.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#our-story" class="px-6 py-3 bg-primary text-white font-medium !rounded-button hover:bg-primary/90 transition duration-300 text-center whitespace-nowrap">Our Story</a>
+                    <a href="#our-team" class="px-6 py-3 border border-gray-300 text-gray-800 font-medium !rounded-button hover:border-primary hover:text-primary transition duration-300 text-center whitespace-nowrap">Meet Our Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Overview -->
+    <section id="our-story" class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Mission & Vision</h2>
+                <p class="text-xl text-gray-700 mb-8 leading-relaxed">At Excell-On Services, we are committed to empowering businesses through innovative solutions that drive growth, efficiency, and exceptional customer experiences.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-6">
+                            <i class="ri-focus-3-line text-primary ri-2x"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Our Mission</h3>
+                        <p class="text-gray-700">To deliver exceptional business services that create measurable value for our clients, enabling them to focus on their core competencies while we handle their critical operational needs with expertise and dedication.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-6">
+                            <i class="ri-eye-line text-primary ri-2x"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Our Vision</h3>
+                        <p class="text-gray-700">To be the global leader in business support services, recognized for our innovation, reliability, and commitment to excellence, transforming how businesses operate and succeed in an ever-evolving marketplace.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto mt-20">
+                <div class="flex flex-col md:flex-row items-center gap-12 mb-16">
+                    <div class="md:w-1/2">
+                        <img src="https://readdy.ai/api/search-image?query=professional%2520business%2520founder%2520in%2520modern%2520office%2520setting%252C%2520confident%2520pose%252C%2520business%2520attire%252C%2520blue%2520accent%2520lighting%252C%2520high-end%2520corporate%2520photography%252C%2520inspirational%2520business%2520leader%2520portrait%252C%2520sophisticated%2520composition&width=600&height=400&seq=12381&orientation=landscape" alt="Founder" class="w-full h-auto rounded-lg shadow-md">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Founding Story</h3>
+                        <p class="text-gray-700 mb-4">Excell-On Services was founded in 2010 by Michael Richardson, a veteran of the business services industry who recognized a critical gap in the market for truly integrated business support solutions.</p>
+                        <p class="text-gray-700 mb-4">After 15 years working with Fortune 500 companies, Michael saw that businesses of all sizes struggled with the same challenges: managing customer relationships effectively, generating quality leads, and implementing strategic growth plans.</p>
+                        <p class="text-gray-700">With an initial team of just 5 dedicated professionals, Excell-On began providing customer support services to technology companies. Today, we've grown to over 500 employees serving clients across 12 countries with a comprehensive suite of business services.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-5xl mx-auto mt-20">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-12">Our Company Timeline</h3>
+                <div class="relative timeline-container">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-16">
+                        <div class="timeline-item relative md:text-right">
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">2010</h4>
+                                <p class="text-gray-700">Founded in Boston with a small team of 5 employees, focusing on customer support services for tech startups.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item relative md:col-start-2">
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">2012</h4>
+                                <p class="text-gray-700">Expanded service offerings to include outbound lead generation and telemarketing services. Team grew to 25 employees.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item relative md:text-right">
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">2014</h4>
+                                <p class="text-gray-700">Opened second office in Chicago and launched our business strategy consulting division. Reached 100 employees milestone.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item relative md:col-start-2">
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">2016</h4>
+                                <p class="text-gray-700">International expansion with new offices in London and Toronto. Introduced multilingual support capabilities in 8 languages.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item relative md:text-right">
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">2018</h4>
+                                <p class="text-gray-700">Recognized as one of the fastest-growing business service providers. Expanded to 250 employees serving 150+ clients globally.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item relative md:col-start-2">
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">2020</h4>
+                                <p class="text-gray-700">Celebrated 10-year anniversary. Launched digital transformation consulting services. Adapted to remote work model during global pandemic.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item relative md:text-right">
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">2022</h4>
+                                <p class="text-gray-700">Acquired DataInsight Analytics to enhance our data-driven business strategy offerings. Expanded to Asia with new Singapore office.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item relative md:col-start-2">
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">2025</h4>
+                                <p class="text-gray-700">Today: Over 500 employees across 8 global offices, serving 300+ clients in 12 countries with comprehensive business solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Our Values -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Core Values</h2>
+                <p class="text-xl text-gray-700">These principles guide everything we do, from how we serve our clients to how we collaborate as a team.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="value-card bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+                        <i class="ri-award-line text-primary ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Excellence</h3>
+                    <p class="text-gray-700">We are committed to delivering exceptional quality in everything we do, consistently exceeding expectations and striving for continuous improvement.</p>
+                </div>
+
+                <div class="value-card bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+                        <i class="ri-heart-line text-primary ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Integrity</h3>
+                    <p class="text-gray-700">We operate with honesty, transparency, and ethical standards in all our interactions, building trust with our clients, partners, and team members.</p>
+                </div>
+
+                <div class="value-card bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+                        <i class="ri-team-line text-primary ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Collaboration</h3>
+                    <p class="text-gray-700">We believe in the power of teamwork, fostering an environment where diverse perspectives come together to create innovative solutions.</p>
+                </div>
+
+                <div class="value-card bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+                        <i class="ri-customer-service-2-line text-primary ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Client Focus</h3>
+                    <p class="text-gray-700">We place our clients at the center of everything we do, deeply understanding their needs and consistently delivering value that helps them succeed.</p>
+                </div>
+
+                <div class="value-card bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+                        <i class="ri-lightbulb-line text-primary ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Innovation</h3>
+                    <p class="text-gray-700">We embrace change and continuously seek new and better ways to solve problems, leveraging technology and creative thinking to drive results.</p>
+                </div>
+
+                <div class="value-card bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+                        <i class="ri-global-line text-primary ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Diversity</h3>
+                    <p class="text-gray-700">We celebrate and embrace differences in backgrounds, perspectives, and experiences, creating a rich environment that fuels our success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section id="our-team" class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Meet Our Leadership Team</h2>
+                <p class="text-xl text-gray-700">The experienced professionals guiding our company's vision and growth.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="team-card bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="h-80 bg-gray-100">
+                        <img src="https://readdy.ai/api/search-image?query=professional%2520business%2520CEO%2520portrait%252C%2520male%252C%252050s%252C%2520confident%2520pose%252C%2520business%2520suit%252C%2520neutral%2520background%252C%2520high-end%2520corporate%2520photography%252C%2520professional%2520headshot&width=600&height=600&seq=12382&orientation=portrait" alt="Michael Richardson" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Michael Richardson</h3>
+                        <p class="text-primary font-medium mb-4">Founder & CEO</p>
+                        <p class="text-gray-600 mb-6">With over 20 years of experience in business services, Michael founded Excell-On with a vision to transform how companies approach customer engagement and business growth.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="social-icon w-10 h-10 flex items-center justify-center border border-gray-200 rounded-full text-gray-600">
+                                <i class="ri-linkedin-fill"></i>
+                            </a>
+                            <a href="#" class="social-icon w-10 h-10 flex items-center justify-center border border-gray-200 rounded-full text-gray-600">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                            <a href="#" class="social-icon w-10 h-10 flex items-center justify-center border border-gray-200 rounded-full text-gray-600">
+                                <i class="ri-mail-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="team-card bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="h-80 bg-gray-100">
+                        <img src="https://readdy.ai/api/search-image?query=professional%2520business%2520woman%2520portrait%252C%2520female%252C%252040s%252C%2520confident%2520pose%252C%2520business%2520attire%252C%2520neutral%2520background%252C%2520high-end%2520corporate%2520photography%252C%2520professional%2520headshot&width=600&height=600&seq=12383&orientation=portrait" alt="Sarah Johnson" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Sarah Johnson</h3>
+                        <p class="text-primary font-medium mb-4">Chief Operations Officer</p>
+                        <p class="text-gray-600 mb-6">Sarah brings 15 years of operational leadership experience from Fortune 500 companies, optimizing our service delivery and ensuring exceptional client outcomes.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="social-icon w-10 h-10 flex items-center justify-center border border-gray-200 rounded-full text-gray-600">
+                                <i class="ri-linkedin-fill"></i>
+                            </a>
+                            <a href="#" class="social-icon w-10 h-10 flex items-center justify-center border border-gray-200 rounded-full text-gray-600">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                            <a href="#" class="social-icon w-10 h-10 flex items-center justify-center border border-gray-200 rounded-full text-gray-600">
+                                <i class="ri-mail-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="team-card bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="h-80 bg-gray-100">
+                        <img src="https://readdy.ai/api/search-image?query=professional%2520business%2520man%2520portrait%252C%2520male%252C%252045s%252C%2520confident%2520pose%252C%2520business%2520casual%2520attire%252C%2520neutral%2520background%252C%2520high-end%2520corporate%2520photography%252C%2520professional%2520headshot&width=600&height=600&seq=12384&orientation=portrait" alt="David Chen" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">David Chen</h3>
+                        <p class="text-primary font-medium mb-4">Chief Technology Officer</p>
+                        <p class="text-gray-600 mb-6">David leads our technology initiatives, bringing 18 years of experience in developing innovative solutions that enhance our service capabilities and client experience.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="social-icon w-10 h-10 flex items-center justify-center border border-gray-200 rounded-full text-gray-600">
+                                <i class="ri-linkedin-fill"></i>
+                            </a>
+                            <a href="#" class="social-icon w-10 h-10 flex items-center justify-center border border-gray-200 rounded-full text-gray-600">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                            <a href="#" class="social-icon w-10 h-10 flex items-center justify-center border border-gray-200 rounded-full text-gray-600">
+                                <i class="ri-mail-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="team-card bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="h-80 bg-gray-100">
+                        <img src="https://readdy.ai/api/search-image?query=professional%2520business%2520woman%2520portrait%252C%2520female%252C%252030s%252C%2520confident%2520pose%252C%2520business%2520attire%252C%2520neutral%2520background%252C%2520high-end%2520corporate%2520photography%252C%2520professional%2520headshot&width=600&height=600&seq=12385&orientation=portrait" alt="Emily Rodriguez" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Emily Rodriguez</h3>
+                        <p class="text-primary font-medium mb-4">Chief Marketing Officer</p>
+                        <p class="text-gray-600 mb-6">Emily directs our marketing strategy with 12 years of experience in B2B marketing, helping us connect with clients and communicate our unique value proposition.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="social-icon w-10 h-10 flex items-center justify-center border border-gray-200 rounded-full text-gray-600">
+                                <i class="ri-linkedin-fill"></i>
+                            </a>
+                            <a href="#" class="social-icon w-10 h-10 flex items-center justify-center border border-gray-200 rounded-full text-gray-600">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                            <a href="#" class="social-icon w-10 h-10 flex items-center justify-center border border-gray-200 rounded-full text-gray-600">
+                                <i class="ri-mail-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 5 -->
+                <div class="team-card bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="h-80 bg-gray-100">
+                        <img src="https://readdy.ai/api/search-image?query=professional%2520business%2520man%2520portrait%252C%2520male%252C%252040s%252C%2520confident%2520pose%252C%2520business%2520suit%252C%2520neutral%2520background%252C%2520high-end%2520corporate%2520photography%252C%2520professional%2520headshot&width=600&height=600&seq=12386&orientation=portrait" alt="Robert Williams" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Robert Williams</h3>
+                        <p class="text-primary font-medium mb-4">Chief Financial Officer</p>
+                        <p class="text-gray-600 mb-6">Robert oversees our financial strategy with 20 years of experience in corporate finance, ensuring sustainable growth and sound financial management.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="social-icon w-10 h-10 flex items-center justify-center border border-gray-200 rounded-full text-gray-600">
+                                <i class="ri-linkedin-fill"></i>
+                            </a>
+                            <a href="#" class="social-icon w-10 h-10 flex items-center justify-center border border-gray-200 rounded-full text-gray-600">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                            <a href="#" class="social-icon w-10 h-10 flex items-center justify-center border border-gray-200 rounded-full text-gray-600">
+                                <i class="ri-mail-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 6 -->
+                <div class="team-card bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="h-80 bg-gray-100">
+                        <img src="https://readdy.ai/api/search-image?query=professional%2520business%2520woman%2520portrait%252C%2520female%252C%252035s%252C%2520confident%2520pose%252C%2520business%2520attire%252C%2520neutral%2520background%252C%2520high-end%2520corporate%2520photography%252C%2520professional%2520headshot&width=600&height=600&seq=12387&orientation=portrait" alt="Jennifer Lee" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Jennifer Lee</h3>
+                        <p class="text-primary font-medium mb-4">VP of Client Services</p>
+                        <p class="text-gray-600 mb-6">Jennifer leads our client services team with 14 years of experience in customer success, ensuring we deliver exceptional value and build lasting relationships.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="social-icon w-10 h-10 flex items-center justify-center border border-gray-200 rounded-full text-gray-600">
+                                <i class="ri-linkedin-fill"></i>
+                            </a>
+                            <a href="#" class="social-icon w-10 h-10 flex items-center justify-center border border-gray-200 rounded-full text-gray-600">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                            <a href="#" class="social-icon w-10 h-10 flex items-center justify-center border border-gray-200 rounded-full text-gray-600">
+                                <i class="ri-mail-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Culture -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Company Culture</h2>
+                <p class="text-xl text-gray-700">At Excell-On, we foster an environment where innovation thrives, collaboration is celebrated, and every team member can grow both personally and professionally.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <img src="https://readdy.ai/api/search-image?query=modern%2520office%2520environment%2520with%2520diverse%2520team%2520collaborating%252C%2520bright%2520workspace%252C%2520blue%2520accent%2520colors%252C%2520professional%2520business%2520setting%252C%2520people%2520working%2520together%252C%2520high-end%2520corporate%2520photography&width=800&height=500&seq=12388&orientation=landscape" alt="Team Collaboration" class="w-full h-64 object-cover object-top">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Collaborative Environment</h3>
+                        <p class="text-gray-700">We believe in the power of teamwork and diverse perspectives. Our open office spaces and collaborative tools foster communication and idea-sharing across departments and locations.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <img src="https://readdy.ai/api/search-image?query=professional%2520development%2520workshop%2520in%2520modern%2520office%252C%2520diverse%2520team%2520learning%252C%2520training%2520session%252C%2520blue%2520accent%2520colors%252C%2520business%2520education%2520setting%252C%2520high-end%2520corporate%2520photography&width=800&height=500&seq=12389&orientation=landscape" alt="Professional Development" class="w-full h-64 object-cover object-top">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Continuous Learning</h3>
+                        <p class="text-gray-700">We invest in our team's growth through professional development programs, mentorship opportunities, and a learning stipend that empowers employees to expand their skills and expertise.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Employee Testimonials -->
+            <div class="max-w-5xl mx-auto mt-20">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-12">What Our Team Says</h3>
+
+                <div class="relative">
+                    <div class="testimonial-slider flex overflow-x-auto gap-6 pb-8">
+                        <!-- Testimonial 1 -->
+                        <div class="bg-white p-8 rounded-lg shadow-sm min-w-[350px] md:min-w-[400px] flex-shrink-0">
+                            <div class="flex items-center mb-6">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary">
+                                    <i class="ri-double-quotes-l ri-lg"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-6 italic">"Working at Excell-On has been the most rewarding experience of my career. The collaborative culture and emphasis on professional growth have allowed me to develop new skills and take on exciting challenges. I'm proud to be part of a team that truly values innovation and excellence."</p>
+                            <div class="flex items-center">
+                                <img src="https://readdy.ai/api/search-image?query=professional%2520business%2520woman%2520portrait%252C%2520female%252C%252028%252C%2520confident%2520smile%252C%2520casual%2520business%2520attire%252C%2520neutral%2520background%252C%2520headshot%252C%2520high-end%2520corporate%2520photography&width=100&height=100&seq=12390&orientation=squarish" alt="Employee" class="w-12 h-12 rounded-full object-cover mr-4">
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Alicia Martinez</h4>
+                                    <p class="text-sm text-gray-500">Senior Account Manager, 5 years at Excell-On</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="bg-white p-8 rounded-lg shadow-sm min-w-[350px] md:min-w-[400px] flex-shrink-0">
+                            <div class="flex items-center mb-6">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary">
+                                    <i class="ri-double-quotes-l ri-lg"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-6 italic">"I joined Excell-On as an entry-level support specialist and have grown into a team lead position in just three years. The mentorship I've received and the company's commitment to promoting from within have been instrumental in my career development. The work is challenging but incredibly fulfilling."</p>
+                            <div class="flex items-center">
+                                <img src="https://readdy.ai/api/search-image?query=professional%2520business%2520man%2520portrait%252C%2520male%252C%252032%252C%2520confident%2520smile%252C%2520casual%2520business%2520attire%252C%2520neutral%2520background%252C%2520headshot%252C%2520high-end%2520corporate%2520photography&width=100&height=100&seq=12391&orientation=squarish" alt="Employee" class="w-12 h-12 rounded-full object-cover mr-4">
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">James Wilson</h4>
+                                    <p class="text-sm text-gray-500">Team Lead, Technical Support, 3 years at Excell-On</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="bg-white p-8 rounded-lg shadow-sm min-w-[350px] md:min-w-[400px] flex-shrink-0">
+                            <div class="flex items-center mb-6">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary">
+                                    <i class="ri-double-quotes-l ri-lg"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-6 italic">"The global nature of Excell-On has given me the opportunity to work with clients and colleagues from around the world. The diverse perspectives and inclusive environment have broadened my horizons and made me a better professional. The work-life balance and flexibility the company offers are unmatched."</p>
+                            <div class="flex items-center">
+                                <img src="https://readdy.ai/api/search-image?query=professional%2520business%2520woman%2520portrait%252C%2520female%252C%252035%252C%2520confident%2520smile%252C%2520business%2520attire%252C%2520neutral%2520background%252C%2520headshot%252C%2520high-end%2520corporate%2520photography&width=100&height=100&seq=12392&orientation=squarish" alt="Employee" class="w-12 h-12 rounded-full object-cover mr-4">
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Sophia Kim</h4>
+                                    <p class="text-sm text-gray-500">Global Strategy Consultant, 4 years at Excell-On</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 4 -->
+                        <div class="bg-white p-8 rounded-lg shadow-sm min-w-[350px] md:min-w-[400px] flex-shrink-0">
+                            <div class="flex items-center mb-6">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary">
+                                    <i class="ri-double-quotes-l ri-lg"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-6 italic">"What sets Excell-On apart is how the leadership team truly listens to employees. Our ideas are valued and often implemented, creating a sense of ownership in the company's success. The recognition programs and team-building events foster a strong sense of community, even across our global offices."</p>
+                            <div class="flex items-center">
+                                <img src="https://readdy.ai/api/search-image?query=professional%2520business%2520man%2520portrait%252C%2520male%252C%252040%252C%2520confident%2520smile%252C%2520business%2520casual%2520attire%252C%2520neutral%2520background%252C%2520headshot%252C%2520high-end%2520corporate%2520photography&width=100&height=100&seq=12393&orientation=squarish" alt="Employee" class="w-12 h-12 rounded-full object-cover mr-4">
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Daniel Thompson</h4>
+                                    <p class="text-sm text-gray-500">Business Development Director, 6 years at Excell-On</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center mt-6 space-x-2">
+                        <button class="w-3 h-3 rounded-full bg-primary" id="slide-dot-1"></button>
+                        <button class="w-3 h-3 rounded-full bg-gray-300" id="slide-dot-2"></button>
+                        <button class="w-3 h-3 rounded-full bg-gray-300" id="slide-dot-3"></button>
+                        <button class="w-3 h-3 rounded-full bg-gray-300" id="slide-dot-4"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Achievements</h2>
+                <p class="text-xl text-gray-700">Recognitions that reflect our commitment to excellence and innovation in business services.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6">Awards & Recognition</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mt-0.5 mr-4 flex-shrink-0">
+                                <i class="ri-award-fill text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Business Services Excellence Award</h4>
+                                <p class="text-sm text-gray-600">Recognized for outstanding client satisfaction and service innovation, 2024</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mt-0.5 mr-4 flex-shrink-0">
+                                <i class="ri-award-fill text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Top 50 Fastest Growing Companies</h4>
+                                <p class="text-sm text-gray-600">Listed by Business Growth Magazine for three consecutive years (2022-2024)</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mt-0.5 mr-4 flex-shrink-0">
+                                <i class="ri-award-fill text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Best Workplace Culture Award</h4>
+                                <p class="text-sm text-gray-600">Recognized for our innovative approach to employee engagement and development, 2023</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mt-0.5 mr-4 flex-shrink-0">
+                                <i class="ri-award-fill text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Customer Service Innovation Award</h4>
+                                <p class="text-sm text-gray-600">For our AI-enhanced customer support platform, 2022</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6">Key Milestones</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mt-0.5 mr-4 flex-shrink-0">
+                                <i class="ri-flag-fill text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">500+ Employees Worldwide</h4>
+                                <p class="text-sm text-gray-600">Reached in 2024, with team members across 8 global offices</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mt-0.5 mr-4 flex-shrink-0">
+                                <i class="ri-flag-fill text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">300+ Active Clients</h4>
+                                <p class="text-sm text-gray-600">Serving businesses across 12 countries and diverse industries</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mt-0.5 mr-4 flex-shrink-0">
+                                <i class="ri-flag-fill text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">15 Years in Business</h4>
+                                <p class="text-sm text-gray-600">Celebrating our 15th anniversary in 2025</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mt-0.5 mr-4 flex-shrink-0">
+                                <i class="ri-flag-fill text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Strategic Acquisition</h4>
+                                <p class="text-sm text-gray-600">Successfully integrated DataInsight Analytics to enhance our service offerings</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                <h3 class="text-xl font-bold text-gray-900 mb-8 text-center">Growth Metrics</h3>
+                <div class="h-80" id="growthChart"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Locations -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Global Presence</h2>
+                <p class="text-xl text-gray-700">With offices across North America, Europe, and Asia, we provide localized service with global expertise.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm mb-12">
+                <div class="h-96 bg-cover bg-center rounded" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Location 1 -->
+                <div class="location-card bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="h-48 bg-gray-100">
+                        <img src="https://readdy.ai/api/search-image?query=boston%2520skyline%2520with%2520modern%2520office%2520buildings%252C%2520professional%2520cityscape%252C%2520business%2520district%252C%2520blue%2520sky%252C%2520high-end%2520architectural%2520photography&width=600&height=300&seq=12394&orientation=landscape" alt="Boston Office" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Boston (Headquarters)</h3>
+                        <p class="text-gray-600 mb-4">100 Innovation Drive, Suite 500<br>Boston, MA 02210, USA</p>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-phone-line"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">+1 (617) 555-1234</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-mail-line"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">boston@excellon.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-time-line"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">Mon-Fri: 8:00 AM - 6:00 PM EST</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location 2 -->
+                <div class="location-card bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="h-48 bg-gray-100">
+                        <img src="https://readdy.ai/api/search-image?query=london%2520skyline%2520with%2520modern%2520office%2520buildings%252C%2520professional%2520cityscape%252C%2520business%2520district%252C%2520blue%2520sky%252C%2520high-end%2520architectural%2520photography&width=600&height=300&seq=12395&orientation=landscape" alt="London Office" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">London</h3>
+                        <p class="text-gray-600 mb-4">25 Business Square, Floor 12<br>London, EC2A 1NQ, UK</p>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-phone-line"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">+44 (0) 20 7123 4567</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-mail-line"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">london@excellon.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-time-line"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">Mon-Fri: 9:00 AM - 5:30 PM GMT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location 3 -->
+                <div class="location-card bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="h-48 bg-gray-100">
+                        <img src="https://readdy.ai/api/search-image?query=singapore%2520skyline%2520with%2520modern%2520office%2520buildings%252C%2520professional%2520cityscape%252C%2520business%2520district%252C%2520blue%2520sky%252C%2520high-end%2520architectural%2520photography&width=600&height=300&seq=12396&orientation=landscape" alt="Singapore Office" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Singapore</h3>
+                        <p class="text-gray-600 mb-4">80 Raffles Place, #25-01<br>Singapore 048624</p>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-phone-line"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">+65 6123 4567</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-mail-line"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">singapore@excellon.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-time-line"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">Mon-Fri: 9:00 AM - 6:00 PM SGT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location 4 -->
+                <div class="location-card bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="h-48 bg-gray-100">
+                        <img src="https://readdy.ai/api/search-image?query=toronto%2520skyline%2520with%2520modern%2520office%2520buildings%252C%2520professional%2520cityscape%252C%2520business%2520district%252C%2520blue%2520sky%252C%2520high-end%2520architectural%2520photography&width=600&height=300&seq=12397&orientation=landscape" alt="Toronto Office" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Toronto</h3>
+                        <p class="text-gray-600 mb-4">200 Bay Street, Suite 3000<br>Toronto, ON M5J 2J2, Canada</p>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-phone-line"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">+1 (416) 555-7890</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-mail-line"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">toronto@excellon.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-time-line"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">Mon-Fri: 8:30 AM - 5:30 PM EST</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location 5 -->
+                <div class="location-card bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="h-48 bg-gray-100">
+                        <img src="https://readdy.ai/api/search-image?query=chicago%2520skyline%2520with%2520modern%2520office%2520buildings%252C%2520professional%2520cityscape%252C%2520business%2520district%252C%2520blue%2520sky%252C%2520high-end%2520architectural%2520photography&width=600&height=300&seq=12398&orientation=landscape" alt="Chicago Office" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Chicago</h3>
+                        <p class="text-gray-600 mb-4">233 S Wacker Drive, Suite 4500<br>Chicago, IL 60606, USA</p>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-phone-line"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">+1 (312) 555-6789</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-mail-line"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">chicago@excellon.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-time-line"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">Mon-Fri: 8:00 AM - 6:00 PM CST</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location 6 -->
+                <div class="location-card bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="h-48 bg-gray-100">
+                        <img src="https://readdy.ai/api/search-image?query=sydney%2520skyline%2520with%2520modern%2520office%2520buildings%252C%2520professional%2520cityscape%252C%2520business%2520district%252C%2520blue%2520sky%252C%2520high-end%2520architectural%2520photography&width=600&height=300&seq=12399&orientation=landscape" alt="Sydney Office" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Sydney</h3>
+                        <p class="text-gray-600 mb-4">1 O'Connell Street, Level 29<br>Sydney, NSW 2000, Australia</p>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-phone-line"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">+61 2 8123 4567</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-mail-line"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">sydney@excellon.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-time-line"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">Mon-Fri: 9:00 AM - 5:30 PM AEST</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Corporate Social Responsibility -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Corporate Social Responsibility</h2>
+                <p class="text-xl text-gray-700">We believe in giving back to our communities and making a positive impact on the world around us.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- CSR Initiative 1 -->
+                <div class="csr-card bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+                        <i class="ri-earth-line text-primary ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Environmental Sustainability</h3>
+                    <p class="text-gray-700 mb-6">Our commitment to reducing our environmental footprint includes:</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <span class="text-gray-600">Carbon-neutral operations across all offices</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <span class="text-gray-600">Paperless initiative reducing paper use by 95%</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <span class="text-gray-600">Renewable energy powering 80% of our facilities</span>
+                        </li>
+                    </ul>
+                    <div class="bg-gray-50 p-4 rounded">
+                        <div class="text-primary font-bold text-xl mb-1">5,000+</div>
+                        <p class="text-sm text-gray-600">Trees planted through our reforestation partnership</p>
+                    </div>
+                </div>
+
+                <!-- CSR Initiative 2 -->
+                <div class="csr-card bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+                        <i class="ri-community-line text-primary ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Community Engagement</h3>
+                    <p class="text-gray-700 mb-6">We actively support the communities where we live and work through:</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <span class="text-gray-600">Volunteer time off program (40 hours per employee annually)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <span class="text-gray-600">Local education initiatives and scholarship programs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <span class="text-gray-600">Skills-based volunteering with nonprofit organizations</span>
+                        </li>
+                    </ul>
+                    <div class="bg-gray-50 p-4 rounded">
+                        <div class="text-primary font-bold text-xl mb-1">12,000+</div>
+                        <p class="text-sm text-gray-600">Volunteer hours contributed in 2024</p>
+                    </div>
+                </div>
+
+                <!-- CSR Initiative 3 -->
+                <div class="csr-card bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+                        <i class="ri-hand-heart-line text-primary ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Charitable Partnerships</h3>
+                    <p class="text-gray-700 mb-6">We partner with organizations making a difference through:</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <span class="text-gray-600">Corporate donation matching program</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <span class="text-gray-600">Pro bono services for selected nonprofits</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <span class="text-gray-600">Annual charity fundraising events across all offices</span>
+                        </li>
+                    </ul>
+                    <div class="bg-gray-50 p-4 rounded">
+                        <div class="text-primary font-bold text-xl mb-1">$1.2M</div>
+                        <p class="text-sm text-gray-600">Donated to charitable causes in 2024</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <a href="#" class="px-6 py-3 bg-primary text-white font-medium !rounded-button hover:bg-primary/90 transition duration-300 inline-block whitespace-nowrap">View Our CSR Report</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-sm text-center">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Ready to Work With Us?</h2>
+                <p class="text-xl text-gray-700 mb-8">Contact our team to learn more about how Excell-On Services can help your business grow and succeed.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#" class="px-6 py-3 bg-primary text-white font-medium !rounded-button hover:bg-primary/90 transition duration-300 text-center whitespace-nowrap">Contact Us</a>
+                    <a href="https://readdy.ai/home/33f9a584-9b7a-4cb2-a40f-b391ae38de69/14505be7-782e-4fb6-a0cc-7ed73c706e5c" data-readdy="true" class="px-6 py-3 border border-gray-300 text-gray-800 font-medium !rounded-button hover:border-primary hover:text-primary transition duration-300 text-center whitespace-nowrap">Explore Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <a href="#" class="text-2xl font-['Pacifico'] text-white mb-4 inline-block">Excell-On</a>
+                    <p class="text-gray-400 mb-6">Providing expert business consulting services since 2010. We help businesses transform, grow, and succeed.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+                            <i class="ri-facebook-fill text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+                            <i class="ri-twitter-fill text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+                            <i class="ri-linkedin-fill text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+                            <i class="ri-instagram-fill text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https://readdy.ai/home/33f9a584-9b7a-4cb2-a40f-b391ae38de69/bffe27d6-0b1a-43db-9c6d-f8646c1af3f2" data-readdy="true" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="https://readdy.ai/home/33f9a584-9b7a-4cb2-a40f-b391ae38de69/14505be7-782e-4fb6-a0cc-7ed73c706e5c" data-readdy="true" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="https://readdy.ai/home/33f9a584-9b7a-4cb2-a40f-b391ae38de69/edb7b4b6-d311-43cb-8790-5280aaf165e6" data-readdy="true" class="text-gray-400 hover:text-white transition duration-300">Clients</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">In-bound Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Out-bound Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Telemarketing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Business Strategy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Market Research</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates and insights.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email address" class="px-4 py-2 w-full bg-gray-800 border-none rounded-l text-white focus:outline-none focus:ring-1 focus:ring-primary">
+                        <button type="submit" class="px-4 py-2 bg-primary text-white !rounded-r-button hover:bg-primary/90 transition duration-300 whitespace-nowrap">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Excell-On Services. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const menuButton = document.querySelector('.ri-menu-line');
+            if (menuButton) {
+                menuButton.addEventListener('click', function() {
+                    // Mobile menu functionality would go here
+                    alert('Mobile menu clicked');
+                });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Testimonial slider dots functionality
+            const slideDots = document.querySelectorAll('[id^="slide-dot-"]');
+            const testimonialSlider = document.querySelector('.testimonial-slider');
+
+            if (slideDots.length > 0 && testimonialSlider) {
+                slideDots.forEach((dot, index) => {
+                    dot.addEventListener('click', function() {
+                        // Reset all dots to inactive state
+                        slideDots.forEach(d => d.classList.remove('bg-primary'));
+                        slideDots.forEach(d => d.classList.add('bg-gray-300'));
+
+                        // Set clicked dot to active state
+                        this.classList.remove('bg-gray-300');
+                        this.classList.add('bg-primary');
+
+                        // Calculate scroll position
+                        const slideWidth = testimonialSlider.querySelector('div').offsetWidth;
+                        testimonialSlider.scrollLeft = slideWidth * index;
+                    });
+                });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Growth Chart
+            const chartDom = document.getElementById('growthChart');
+            if (chartDom) {
+                const myChart = echarts.init(chartDom);
+                const option = {
+                    animation: false,
+                    tooltip: {
+                        trigger: 'axis',
+                        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                        borderColor: '#e5e7eb',
+                        textStyle: {
+                            color: '#1f2937'
+                        }
+                    },
+                    legend: {
+                        data: ['Revenue Growth', 'Client Acquisition', 'Employee Growth'],
+                        bottom: 0,
+                        textStyle: {
+                            color: '#1f2937'
+                        }
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '15%',
+                        top: '8%',
+                        containLabel: true
+                    },
+                    xAxis: {
+                        type: 'category',
+                        data: ['2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+                        axisLine: {
+                            lineStyle: {
+                                color: '#d1d5db'
+                            }
+                        },
+                        axisLabel: {
+                            color: '#1f2937'
+                        }
+                    },
+                    yAxis: {
+                        type: 'value',
+                        name: 'Growth (%)',
+                        nameTextStyle: {
+                            color: '#1f2937'
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: '#d1d5db'
+                            }
+                        },
+                        axisLabel: {
+                            color: '#1f2937'
+                        },
+                        splitLine: {
+                            lineStyle: {
+                                color: '#e5e7eb'
+                            }
+                        }
+                    },
+                    series: [
+                        {
+                            name: 'Revenue Growth',
+                            type: 'line',
+                            data: [15, 22, 18, 25, 32, 28, 35],
+                            smooth: true,
+                            symbol: 'none',
+                            lineStyle: {
+                                color: 'rgba(87, 181, 231, 1)'
+                            },
+                            areaStyle: {
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                    {
+                                        offset: 0,
+                                        color: 'rgba(87, 181, 231, 0.3)'
+                                    },
+                                    {
+                                        offset: 1,
+                                        color: 'rgba(87, 181, 231, 0.1)'
+                                    }
+                                ])
+                            }
+                        },
+                        {
+                            name: 'Client Acquisition',
+                            type: 'line',
+                            data: [20, 25, 15, 30, 35, 40, 45],
+                            smooth: true,
+                            symbol: 'none',
+                            lineStyle: {
+                                color: 'rgba(141, 211, 199, 1)'
+                            },
+                            areaStyle: {
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                    {
+                                        offset: 0,
+                                        color: 'rgba(141, 211, 199, 0.3)'
+                                    },
+                                    {
+                                        offset: 1,
+                                        color: 'rgba(141, 211, 199, 0.1)'
+                                    }
+                                ])
+                            }
+                        },
+                        {
+                            name: 'Employee Growth',
+                            type: 'line',
+                            data: [10, 15, 20, 25, 30, 35, 40],
+                            smooth: true,
+                            symbol: 'none',
+                            lineStyle: {
+                                color: 'rgba(251, 191, 114, 1)'
+                            },
+                            areaStyle: {
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                    {
+                                        offset: 0,
+                                        color: 'rgba(251, 191, 114, 0.3)'
+                                    },
+                                    {
+                                        offset: 1,
+                                        color: 'rgba(251, 191, 114, 0.1)'
+                                    }
+                                ])
+                            }
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+
+                window.addEventListener('resize', function() {
+                    myChart.resize();
+                });
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

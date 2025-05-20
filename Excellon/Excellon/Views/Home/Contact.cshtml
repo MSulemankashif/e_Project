@@ -1,0 +1,857 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Excell-On Services</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#3b82f6',secondary:'#64748b'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        .custom-checkbox {
+            position: relative;
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #cbd5e1;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+            .custom-checkbox.checked {
+                background-color: #3b82f6;
+                border-color: #3b82f6;
+            }
+
+                .custom-checkbox.checked::after {
+                    content: '';
+                    position: absolute;
+                    left: 5px;
+                    top: 2px;
+                    width: 5px;
+                    height: 9px;
+                    border: solid white;
+                    border-width: 0 2px 2px 0;
+                    transform: rotate(45deg);
+                }
+
+        .custom-switch {
+            position: relative;
+            display: inline-block;
+            width: 48px;
+            height: 24px;
+        }
+
+        .custom-switch-track {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #e2e8f0;
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .custom-switch-thumb {
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        .custom-switch.active .custom-switch-track {
+            background-color: #3b82f6;
+        }
+
+        .custom-switch.active .custom-switch-thumb {
+            transform: translateX(24px);
+        }
+
+        .map-container {
+            background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+    <!-- Navigation -->
+
+    <!-- Hero Section -->
+    <section class="pt-24 relative overflow-hidden" style="background-image: url('https://readdy.ai/api/search-image?query=professional%20business%20contact%20background%20with%20soft%20blue%20gradient%2C%20clean%20modern%20office%20environment%2C%20subtle%20technology%20elements%2C%20minimalist%20design%2C%20light%20and%20airy%20atmosphere%2C%20perfect%20for%20contact%20page%20hero%20section&width=1600&height=500&seq=contact-hero&orientation=landscape'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/50"></div>
+        <div class="container mx-auto px-4 py-16 relative">
+            <div class="w-full max-w-3xl">
+                <div class="text-sm text-gray-600 mb-4">
+                    <a href="#" class="hover:text-primary">Home</a> <span class="mx-2">/</span> <span class="text-primary">Contact</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Get in Touch</h1>
+                <p class="text-lg text-gray-600 max-w-xl">Have questions or need assistance? Reach out to our team through any of our contact channels. We're here to help you succeed.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Info Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row gap-8">
+                <!-- Contact Form -->
+                <div class="w-full md:w-7/12 bg-white rounded-lg shadow-sm p-8">
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-6">Send Us a Message</h2>
+                    <form id="contactForm">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">Full Name <span class="text-red-500">*</span></label>
+                                <input type="text" id="fullName" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address <span class="text-red-500">*</span></label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition" required>
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition">
+                            </div>
+                            <div>
+                                <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
+                                <input type="text" id="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition">
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject <span class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <select id="subject" class="w-full px-4 py-2 pr-8 border border-gray-300 rounded appearance-none focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition bg-white" required>
+                                    <option value="" disabled selected>Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="sales">Sales</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="careers">Careers</option>
+                                </select>
+                                <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                    <i class="ri-arrow-down-s-line text-gray-500"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message <span class="text-red-500">*</span></label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition resize-none" required></textarea>
+                        </div>
+
+                        <div class="flex items-center mb-6">
+                            <div class="custom-checkbox" id="privacyCheckbox"></div>
+                            <label for="privacyCheckbox" class="ml-2 text-sm text-gray-600">I agree to the <a href="#" class="text-primary hover:underline">Privacy Policy</a> and <a href="#" class="text-primary hover:underline">Terms of Service</a></label>
+                        </div>
+
+                        <button type="submit" class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-blue-600 transition-colors font-medium whitespace-nowrap flex items-center justify-center">
+                            <span>Send Message</span>
+                            <i class="ri-send-plane-line ml-2"></i>
+                        </button>
+
+                        <div id="formStatus" class="mt-4 hidden">
+                            <div class="bg-green-50 text-green-700 px-4 py-3 rounded">
+                                Thank you! Your message has been sent successfully.
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="w-full md:w-5/12 bg-white rounded-lg shadow-sm p-8">
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-6">Contact Information</h2>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full shrink-0">
+                                <i class="ri-map-pin-line ri-lg"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="font-medium text-gray-900">Headquarters</h3>
+                                <p class="text-gray-600 mt-1">1234 Innovation Drive, Suite 500<br>San Francisco, CA 94103<br>United States</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full shrink-0">
+                                <i class="ri-phone-line ri-lg"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="font-medium text-gray-900">Phone</h3>
+                                <p class="text-gray-600 mt-1">Main: +1 (415) 555-1234<br>Support: +1 (415) 555-5678</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full shrink-0">
+                                <i class="ri-mail-line ri-lg"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="font-medium text-gray-900">Email</h3>
+                                <p class="text-gray-600 mt-1">General: info@excellon.com<br>Support: support@excellon.com<br>Sales: sales@excellon.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full shrink-0">
+                                <i class="ri-time-line ri-lg"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="font-medium text-gray-900">Business Hours</h3>
+                                <p class="text-gray-600 mt-1">Monday - Friday: 9:00 AM - 6:00 PM PST<br>Saturday - Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h3 class="font-medium text-gray-900 mb-3">Connect With Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white text-gray-600 rounded-full transition-colors">
+                                <i class="ri-linkedin-fill ri-lg"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white text-gray-600 rounded-full transition-colors">
+                                <i class="ri-twitter-x-fill ri-lg"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white text-gray-600 rounded-full transition-colors">
+                                <i class="ri-facebook-fill ri-lg"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white text-gray-600 rounded-full transition-colors">
+                                <i class="ri-instagram-fill ri-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Offices Map -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Global Offices</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">With offices around the world, we're ready to serve you wherever you are.</p>
+            </div>
+
+            <div class="map-container h-96 rounded-lg shadow-sm mb-12"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Office 1 -->
+                <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">San Francisco</h3>
+                    <div class="space-y-4">
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">1234 Innovation Drive, Suite 500<br>San Francisco, CA 94103, USA</p>
+                        </div>
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">+1 (415) 555-1234</p>
+                        </div>
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">sf@excellon.com</p>
+                        </div>
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">9:00 AM - 6:00 PM PST<br>Current time: 10:45 AM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Office 2 -->
+                <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">New York</h3>
+                    <div class="space-y-4">
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">350 Fifth Avenue, 21st Floor<br>New York, NY 10118, USA</p>
+                        </div>
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">+1 (212) 555-7890</p>
+                        </div>
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">nyc@excellon.com</p>
+                        </div>
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">9:00 AM - 6:00 PM EST<br>Current time: 1:45 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Office 3 -->
+                <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">London</h3>
+                    <div class="space-y-4">
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">One Canada Square, Level 39<br>London E14 5AB, United Kingdom</p>
+                        </div>
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">+44 20 7946 0321</p>
+                        </div>
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">london@excellon.com</p>
+                        </div>
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">9:00 AM - 6:00 PM GMT<br>Current time: 6:45 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Office 4 -->
+                <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Singapore</h3>
+                    <div class="space-y-4">
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">1 Raffles Place, #20-61<br>Singapore 048616</p>
+                        </div>
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">+65 6823 1234</p>
+                        </div>
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">singapore@excellon.com</p>
+                        </div>
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">9:00 AM - 6:00 PM SGT<br>Current time: 2:45 AM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Office 5 -->
+                <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Sydney</h3>
+                    <div class="space-y-4">
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">Level 26, 44 Market Street<br>Sydney NSW 2000, Australia</p>
+                        </div>
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">+61 2 8880 7890</p>
+                        </div>
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">sydney@excellon.com</p>
+                        </div>
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">9:00 AM - 6:00 PM AEST<br>Current time: 4:45 AM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Office 6 -->
+                <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Berlin</h3>
+                    <div class="space-y-4">
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">Friedrichstraße 68<br>10117 Berlin, Germany</p>
+                        </div>
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">+49 30 5557 8901</p>
+                        </div>
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">berlin@excellon.com</p>
+                        </div>
+                        <div class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">9:00 AM - 6:00 PM CET<br>Current time: 7:45 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Department Contact Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Contact by Department</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Reach out directly to the team that can best assist you with your specific needs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Sales -->
+                <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition">
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
+                        <i class="ri-shopping-cart-line ri-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Sales</h3>
+                    <p class="text-gray-600 mb-4">For pricing, demos, and product inquiries</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <p class="ml-2 text-gray-600">+1 (415) 555-5678</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <p class="ml-2 text-gray-600">sales@excellon.com</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <p class="ml-2 text-gray-600">Response time: 1-2 hours</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Support -->
+                <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition">
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
+                        <i class="ri-customer-service-line ri-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Technical Support</h3>
+                    <p class="text-gray-600 mb-4">For existing customers needing assistance</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <p class="ml-2 text-gray-600">+1 (415) 555-9012</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <p class="ml-2 text-gray-600">support@excellon.com</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <p class="ml-2 text-gray-600">Response time: 4-8 hours</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Careers -->
+                <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition">
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
+                        <i class="ri-user-search-line ri-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Careers</h3>
+                    <p class="text-gray-600 mb-4">For job opportunities and recruitment</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <p class="ml-2 text-gray-600">+1 (415) 555-3456</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <p class="ml-2 text-gray-600">careers@excellon.com</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <p class="ml-2 text-gray-600">Response time: 1-3 days</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Media -->
+                <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition">
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
+                        <i class="ri-newspaper-line ri-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Media Relations</h3>
+                    <p class="text-gray-600 mb-4">For press and media inquiries</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <p class="ml-2 text-gray-600">+1 (415) 555-7890</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <p class="ml-2 text-gray-600">press@excellon.com</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary shrink-0">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <p class="ml-2 text-gray-600">Response time: 1-2 days</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Consultation Booking Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-sm overflow-hidden">
+                <div class="flex flex-col md:flex-row">
+                    <div class="w-full md:w-1/2 p-8 bg-primary text-white" style="background-image: url('https://readdy.ai/api/search-image?query=professional%20business%20meeting%20scene%20with%20diverse%20team%20discussing%20strategy%2C%20modern%20office%20setting%20with%20large%20windows%2C%20soft%20natural%20lighting%2C%20business%20professionals%20in%20smart%20casual%20attire%2C%20collaborative%20atmosphere&width=800&height=600&seq=consultation-bg&orientation=landscape'); background-size: cover; background-position: center;">
+                        <div class="bg-black/30 p-6 rounded-lg backdrop-blur-sm">
+                            <h2 class="text-2xl font-bold mb-4">Schedule a Consultation</h2>
+                            <p class="mb-6">Book a one-on-one session with our experts to discuss your specific needs and get personalized recommendations.</p>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <div class="w-6 h-6 flex items-center justify-center bg-white/20 rounded-full shrink-0">
+                                        <i class="ri-check-line"></i>
+                                    </div>
+                                    <span class="ml-3">Personalized solutions</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-6 h-6 flex items-center justify-center bg-white/20 rounded-full shrink-0">
+                                        <i class="ri-check-line"></i>
+                                    </div>
+                                    <span class="ml-3">Expert guidance</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-6 h-6 flex items-center justify-center bg-white/20 rounded-full shrink-0">
+                                        <i class="ri-check-line"></i>
+                                    </div>
+                                    <span class="ml-3">Flexible scheduling</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-6 h-6 flex items-center justify-center bg-white/20 rounded-full shrink-0">
+                                        <i class="ri-check-line"></i>
+                                    </div>
+                                    <span class="ml-3">No obligation</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-1/2 p-8">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-6">Select a Date & Time</h3>
+
+                        <div class="mb-6">
+                            <label for="consultationDate" class="block text-sm font-medium text-gray-700 mb-1">Date</label>
+                            <input type="date" id="consultationDate" min="2025-05-12" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition">
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Time Slot</label>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button class="px-3 py-2 border border-gray-300 rounded text-sm text-gray-700 hover:border-primary hover:bg-primary/5 transition whitespace-nowrap !rounded-button">9:00 AM</button>
+                                <button class="px-3 py-2 border border-gray-300 rounded text-sm text-gray-700 hover:border-primary hover:bg-primary/5 transition whitespace-nowrap !rounded-button">10:30 AM</button>
+                                <button class="px-3 py-2 border border-gray-300 rounded text-sm text-gray-700 hover:border-primary hover:bg-primary/5 transition whitespace-nowrap !rounded-button">12:00 PM</button>
+                                <button class="px-3 py-2 border border-gray-300 rounded text-sm text-gray-700 hover:border-primary hover:bg-primary/5 transition whitespace-nowrap !rounded-button">1:30 PM</button>
+                                <button class="px-3 py-2 border border-gray-300 rounded text-sm text-gray-700 hover:border-primary hover:bg-primary/5 transition whitespace-nowrap !rounded-button">3:00 PM</button>
+                                <button class="px-3 py-2 border border-gray-300 rounded text-sm text-gray-700 hover:border-primary hover:bg-primary/5 transition whitespace-nowrap !rounded-button">4:30 PM</button>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="timezone" class="block text-sm font-medium text-gray-700 mb-1">Time Zone</label>
+                            <div class="relative">
+                                <select id="timezone" class="w-full px-4 py-2 pr-8 border border-gray-300 rounded appearance-none focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition bg-white">
+                                    <option value="pst">Pacific Time (PST)</option>
+                                    <option value="est">Eastern Time (EST)</option>
+                                    <option value="gmt">Greenwich Mean Time (GMT)</option>
+                                    <option value="cet">Central European Time (CET)</option>
+                                    <option value="jst">Japan Standard Time (JST)</option>
+                                </select>
+                                <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                    <i class="ri-arrow-down-s-line text-gray-500"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="consultationTopic" class="block text-sm font-medium text-gray-700 mb-1">What would you like to discuss?</label>
+                            <textarea id="consultationTopic" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition resize-none"></textarea>
+                        </div>
+
+                        <button class="w-full bg-primary text-white px-4 py-3 !rounded-button hover:bg-blue-600 transition-colors font-medium whitespace-nowrap">
+                            Book Consultation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Contact Channels -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">More Ways to Connect</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Choose the communication channel that works best for you.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Live Chat -->
+                <div class="bg-white rounded-lg shadow-sm p-8 text-center hover:shadow-md transition">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary rounded-full mx-auto mb-6">
+                        <i class="ri-chat-3-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Live Chat</h3>
+                    <p class="text-gray-600 mb-6">Chat with our support team in real-time during business hours for immediate assistance.</p>
+                    <div class="flex items-center justify-center space-x-2 text-sm text-primary">
+                        <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                        <span>Available Now</span>
+                    </div>
+                    <button class="mt-4 bg-primary text-white px-6 py-2 !rounded-button hover:bg-blue-600 transition-colors whitespace-nowrap">
+                        Start Chat
+                    </button>
+                </div>
+
+                <!-- Support Ticket -->
+                <div class="bg-white rounded-lg shadow-sm p-8 text-center hover:shadow-md transition">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary rounded-full mx-auto mb-6">
+                        <i class="ri-ticket-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Support Ticket</h3>
+                    <p class="text-gray-600 mb-6">Submit a detailed support ticket for complex issues that require thorough investigation.</p>
+                    <div class="text-sm text-gray-500 mb-4">
+                        Average response time: 4-8 hours
+                    </div>
+                    <button class="mt-4 bg-primary text-white px-6 py-2 !rounded-button hover:bg-blue-600 transition-colors whitespace-nowrap">
+                        Submit Ticket
+                    </button>
+                </div>
+
+                <!-- FAQ -->
+                <div class="bg-white rounded-lg shadow-sm p-8 text-center hover:shadow-md transition">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary rounded-full mx-auto mb-6">
+                        <i class="ri-question-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Knowledge Base</h3>
+                    <p class="text-gray-600 mb-6">Browse our comprehensive FAQ and documentation to find quick answers to common questions.</p>
+                    <div class="text-sm text-gray-500 mb-4">
+                        Over 500 articles and tutorials
+                    </div>
+                    <button class="mt-4 bg-primary text-white px-6 py-2 !rounded-button hover:bg-blue-600 transition-colors whitespace-nowrap">
+                        Browse FAQs
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <a href="#" class="text-2xl font-['Pacifico'] text-white mb-4 block">Excell-On</a>
+                    <p class="text-gray-400 mb-6">Empowering businesses with innovative solutions since 2010. We're dedicated to helping you achieve excellence.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full transition-colors">
+                            <i class="ri-twitter-x-fill"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full transition-colors">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full transition-colors">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-primary hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Our Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Business Consulting</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Financial Advisory</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Market Research</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Digital Transformation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Strategic Planning</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Operations Management</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Subscribe to Our Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Stay updated with our latest news and offers.</p>
+                    <form class="mb-4">
+                        <div class="flex">
+                            <input type="email" placeholder="Your email address" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-l focus:outline-none focus:border-primary text-white">
+                            <button type="submit" class="bg-primary text-white px-4 py-2 rounded-r hover:bg-blue-600 transition-colors whitespace-nowrap !rounded-button">Subscribe</button>
+                        </div>
+                    </form>
+                    <p class="text-gray-500 text-sm">By subscribing, you agree to our Privacy Policy and consent to receive updates.</p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2025 Excell-On Services. All rights reserved.</p>
+                    <div class="flex space-x-4 text-sm text-gray-500">
+                        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                        <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Privacy Checkbox Toggle
+            const privacyCheckbox = document.getElementById('privacyCheckbox');
+            if (privacyCheckbox) {
+                privacyCheckbox.addEventListener('click', function() {
+                    this.classList.toggle('checked');
+                });
+            }
+
+            // Form submission
+            const contactForm = document.getElementById('contactForm');
+            const formStatus = document.getElementById('formStatus');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    // Simple validation
+                    const fullName = document.getElementById('fullName').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value;
+                    const isChecked = privacyCheckbox.classList.contains('checked');
+
+                    if (!fullName || !email || !subject || !message || !isChecked) {
+                        formStatus.innerHTML = '<div class="bg-red-50 text-red-700 px-4 py-3 rounded">Please fill in all required fields and agree to the terms.</div>';
+                        formStatus.classList.remove('hidden');
+                        return;
+                    }
+
+                    // Simulate form submission
+                    const submitButton = contactForm.querySelector('button[type="submit"]');
+                    submitButton.innerHTML = '<span>Sending...</span> <i class="ri-loader-4-line ml-2 animate-spin"></i>';
+                    submitButton.disabled = true;
+
+                    setTimeout(() => {
+                        formStatus.innerHTML = '<div class="bg-green-50 text-green-700 px-4 py-3 rounded">Thank you! Your message has been sent successfully.</div>';
+                        formStatus.classList.remove('hidden');
+                        submitButton.innerHTML = '<span>Send Message</span> <i class="ri-send-plane-line ml-2"></i>';
+                        submitButton.disabled = false;
+                        contactForm.reset();
+                        privacyCheckbox.classList.remove('checked');
+                    }, 1500);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Excellon")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a200d6e191a53d809b553192e8596f392d087d7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb2aa721382a28c117de3f2d2954ba4fb19ab1cb")]
 [assembly: System.Reflection.AssemblyProductAttribute("Excellon")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Excellon")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

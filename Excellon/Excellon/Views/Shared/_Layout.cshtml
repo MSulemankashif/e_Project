@@ -11,24 +11,23 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Excellon</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">About</a>
-                        </li>
-                    </ul>
+            <div class="container mx-auto px-6 flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-['Pacifico'] text-primary">Excell-On</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a asp-controller="Home" asp-action="Index" data-readdy="true" class="text-gray-800 hover:text-primary font-medium">Home</a>
+                    <a asp-controller="Home" asp-action="Services" data-readdy="true" class="text-gray-800 hover:text-primary font-medium">Services</a>
+                    <a asp-controller="Home" asp-action="Clients" data-readdy="true" class="text-gray-800 hover:text-primary font-medium">Clients</a>
+                    <a asp-controller="Home" asp-action="About" class="text-primary font-medium">About</a>
+                    <a asp-controller="Home" asp-action="Contact" class="text-gray-800 hover:text-primary font-medium">Contact</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#" class="px-4 py-2 text-primary border border-primary !rounded-button hover:bg-primary hover:text-white transition duration-300 whitespace-nowrap">Log In</a>
+                    <a href="#" class="px-4 py-2 bg-primary text-white !rounded-button hover:bg-primary/90 transition duration-300 whitespace-nowrap">Register</a>
+                </div>
+                <div class="md:hidden w-10 h-10 flex items-center justify-center">
+                    <i class="ri-menu-line ri-lg text-gray-800"></i>
                 </div>
             </div>
         </nav>
