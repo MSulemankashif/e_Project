@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "Excellon\\Views\\Login\\Signin.cshtml",
               "ToolTip": "C:\\Users\\dell\\OneDrive\\Desktop\\e_Project\\e_Project\\Excellon\\Excellon\\Views\\Login\\Signin.cshtml",
               "RelativeToolTip": "Excellon\\Views\\Login\\Signin.cshtml",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAcwHEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAmwFkAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-20T16:40:37.124Z",
               "EditorCaption": ""
@@ -51,8 +51,7 @@
               "RelativeToolTip": "Excellon\\Controllers\\Login.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T16:23:52.1Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T16:23:52.1Z"
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "Excellon\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAABwAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-20T14:49:50.339Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T14:49:50.339Z"
             },
             {
               "$type": "Document",
@@ -77,8 +75,7 @@
               "RelativeToolTip": "Excellon\\Controllers\\HomeController.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAIwCMAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T10:54:27.774Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-18T10:54:27.774Z"
             }
           ]
         }
